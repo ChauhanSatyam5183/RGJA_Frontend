@@ -16,14 +16,14 @@ function SearchBar({ name }) {
 
     useEffect(() => {
         fetchProducts();
-    }, [page]); // ✅ Fetch products when `page` updates
+    }, [page,name]); // ✅ Fetch products when `page` updates
 
     const fetchProducts = async () => {
         if (!hasMore) return; // ✅ Stop fetching if no more data
 
         setLoading(true);
         try {
-            const response = await axios.get(`https://rgja.onrender.com/v1/Product/?page=${1}&search=${name}`);
+            const response = await axios.get(`https://rgja.onrender.com/v1/Product/?page=${page}&search=${name}`);
             console.log("Response:", response);
 
             const newProducts = response.data.data;

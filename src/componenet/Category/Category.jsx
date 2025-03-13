@@ -27,7 +27,7 @@ function Category() {
         setLoading(true);
         try {
             const response = await axios.get(
-                `/api/Product/?page=${page}&search=${searchParams.get("Name")}` // ✅ Fixed API URL
+                `https://rgja.onrender.com/v1/Product/?page=${page}&search=${name}` // ✅ Fixed API URL
             );
 
             console.log("Response:", response);
