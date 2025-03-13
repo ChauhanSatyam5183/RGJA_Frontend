@@ -6,6 +6,10 @@ import Banner2 from "../Banner/Banner2";
 import Work from "../working/Work";
 import Footer from "../Footer/Footer";
 import SearchBar from "../SearchBar/SearchBar";
+<<<<<<< HEAD
+=======
+import { useNavigate } from "react-router-dom";
+>>>>>>> 632531a (adding functonality of product and category)
 
 
 
@@ -15,6 +19,14 @@ function Navbar1() {
   const debounce=UseDebounce((e)=>{
     setSearch(e.target.value);
    }); 
+
+  const navigate = useNavigate(); 
+ function handleclick(name){
+
+  //naviget to another page 
+  navigate(`/category?Name=${name}`);
+ }
+
   return ( 
 
   <>
@@ -94,12 +106,13 @@ function Navbar1() {
 
 
     
-<div className="max-w-screen-xl mt-4 bg-blue-400 text-xs py-2 mx-auto  md:text-l flex flex-row items-center justify-around   md:font-medium">
-   <div className="cursor-pointer hover:text-blue-500  px-1 md:text-xl ">EXPLORE</div>
-  <div className="cursor-pointer hover:text-blue-500 ">Grocery & Kitchen</div>
-  <div className="cursor-pointer hover:text-blue-500 ">Snacks & Drinks</div>
-  <div className="cursor-pointer hover:text-blue-500 ">Beauty& PersonalCare</div>
-  <div className="cursor-pointer hover:text-blue-500 ">Household & Essentials</div>
+<div className="max-w-screen-xl mt-4 bg-blue-400 text-xs py-2 mx-auto  md:text-xl flex flex-row items-center justify-around   md:font-medium">
+   <div className="cursor-pointer hover:text-blue-500  px-3 md:text-1xl ">EXPLORE</div>
+   <div className="cursor-pointer hover:text-blue-500 " onClick={() => handleclick("Grocery")}>Grocery & Kitchen</div>
+<div className="cursor-pointer hover:text-blue-500 " onClick={() => handleclick("Snacks")}>Snacks & Drinks</div>
+<div className="cursor-pointer hover:text-blue-500 " onClick={() => handleclick("Beauty")}>Beauty & PersonalCare</div>
+<div className="cursor-pointer hover:text-blue-500 " onClick={() => handleclick("Household")}>Household & Essentials</div>
+
 </div>
 
       
