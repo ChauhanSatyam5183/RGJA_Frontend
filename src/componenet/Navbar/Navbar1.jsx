@@ -6,10 +6,9 @@ import Banner2 from "../Banner/Banner2";
 import Work from "../working/Work";
 import Footer from "../Footer/Footer";
 import SearchBar from "../SearchBar/SearchBar";
-<<<<<<< HEAD
-=======
+
 import { useNavigate } from "react-router-dom";
->>>>>>> 632531a (adding functonality of product and category)
+
 
 
 
