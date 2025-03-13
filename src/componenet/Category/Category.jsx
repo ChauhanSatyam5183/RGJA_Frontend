@@ -2,12 +2,12 @@ import { ArrowLeft } from "lucide-react"; // Import back arrow icon
 import axios from "axios";
 import { useEffect, useState } from "react";
 import CategoryCard from "../Search/CategoryCard";
-import { useParams } from "react-router-dom";
+
 
 
 function Category() {
    
-    const{name}=useParams();
+    
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
     const [page, setPage] = useState(1);
@@ -21,14 +21,14 @@ function Category() {
 
     useEffect(() => {
         fetchProducts();
-    }, [page]);
+    }, []);
 
     const fetchProducts = async () => {
         if (!hasMore) return;
 
         setLoading(true);
         try {
-            const response = await axios.get(`api/Product/?page=${page}&search=${name}`);
+            const response = await axios.get(`api/Product/?page=${page}&search=grocery`);
             console.log("Response:", response);
 
             const newProducts = response.data.data;
