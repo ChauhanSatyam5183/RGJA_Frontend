@@ -23,7 +23,7 @@ function SearchBar({ name }) {
 
         setLoading(true);
         try {
-            const response = await axios.get(`api/Product/?page=${1}&search=${name}`);
+            const response = await axios.get(`https://rgja.onrender.com/v1/Product/?page=${1}&search=${name}`);
             console.log("Response:", response);
 
             const newProducts = response.data.data;
