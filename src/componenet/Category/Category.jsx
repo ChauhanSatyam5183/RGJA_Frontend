@@ -1,7 +1,7 @@
 import { ArrowLeft } from "lucide-react"; // Import back arrow icon
 import axios from "axios";
 import { useEffect, useState } from "react";
-import CategoryCard from "../Search/CategoryCard";
+import CategoryCard from "../SearchBar/CategoryCard";
 
 
 

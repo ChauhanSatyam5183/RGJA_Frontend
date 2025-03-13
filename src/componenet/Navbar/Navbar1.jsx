@@ -5,7 +5,8 @@ import Banner1 from "../Banner/Banner1";
 import Banner2 from "../Banner/Banner2";
 import Work from "../working/Work";
 import Footer from "../Footer/Footer";
-import SearchBar from "../Search/Searchbar";
+import SearchBar from "../SearchBar/Searchbar";
+
 
 
 function Navbar1() {
