@@ -6,7 +6,7 @@ import Banner2 from "../Banner/Banner2";
 import Work from "../working/Work";
 import Footer from "../Footer/Footer";
 import SearchBar from "../Search/Searchbar";
-import { Link } from "lucide-react";
+
 
 function Navbar1() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
