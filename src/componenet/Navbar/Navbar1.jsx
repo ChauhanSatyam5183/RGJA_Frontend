@@ -10,7 +10,7 @@ import SearchBar from "../SearchBar/SearchBar";
 import { useNavigate } from "react-router-dom";
 import Login from "../AuthComponent/Login";
 import LoginContext from "../Context/LoginContext";
-
+import { Link } from "react-router-dom";
 
 
 
@@ -83,9 +83,11 @@ function Navbar1() {
                 <a className="mr-2 text-red-500 text-xl" onClick={()=>{setIsLoginOpen(false)}}>X</a>
               </div>
                 
-                <a className="block px-3 py-2 hover:bg-blue-300">
-                  Signup
-                </a>
+                
+                <p className="block px-3 py-2 hover:bg-blue-300" onClick={()=>navigate("/signup")}>
+                Signup
+                </p>
+                
               </div>
             )}
           </div>

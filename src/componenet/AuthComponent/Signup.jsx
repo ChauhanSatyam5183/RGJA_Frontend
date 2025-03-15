@@ -1,6 +1,5 @@
 import { useState } from "react";
 import axios from "axios";
-import Footer from "../Footer/Footer";
 import { Link } from "react-router-dom";
 
 function Signup() {
@@ -38,11 +37,15 @@ function Signup() {
 
   return (
     <>
-    <div className="flex h-screen items-center justify-center bg-gray-100">
+    {/* Logo */}
+    <div className="md:text-2xl h-[30px] text-center font-bold text-blue-600">
+          RGJA<span className="text-yellow-500">SHOP</span> <span className="text-blue-500 ">s✨</span>
+        </div>
+    <div className="flex h-screen items-center justify-center bg-blue-100 ">
       
 
       {/* Right Section */}
-      <div className="bg-white w-full md:w-1/3 p-8 rounded-lg shadow-md">
+      <div className="bg-white w-full md:w-1/3 p-8 rounded-lg shadow-md ">
         <form onSubmit={handleSubmit} className="space-y-4">
           <h2 className="text-xl font-semibold text-gray-700">Create an Account</h2>
           {message && <p className="text-green-600">{message}</p>}
@@ -126,7 +129,7 @@ function Signup() {
         </form>
       </div>
     </div>
-    <Footer/>
+    
     </>
   );
 }

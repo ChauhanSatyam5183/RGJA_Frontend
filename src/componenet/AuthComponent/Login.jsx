@@ -1,10 +1,11 @@
 import { useContext, useState } from "react";
 import LoginContext from "../Context/LoginContext";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function Login({ onClose }) {
   const { setisLogin } = useContext(LoginContext);
-
+  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -98,9 +99,11 @@ function Login({ onClose }) {
             </p>
 
             {/* Signup Link */}
+            <Link to="/signup"> 
             <p className="text-sm text-center text-blue-500 hover:underline cursor-pointer">
               New to RGJASHOPs? Create an account
             </p>
+            </Link>
           </form>
         </div>
       </div>
