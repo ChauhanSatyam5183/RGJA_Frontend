@@ -15,7 +15,7 @@ function Login({ onClose }) {
     setError(""); // Clear previous errors
    
     try {
-      const response = await axios.post("http://localhost:5500/v1/User/login", {
+      const response = await axios.post("https://rgja.onrender.com/v1/User/login", {
         email,
         password,
       });

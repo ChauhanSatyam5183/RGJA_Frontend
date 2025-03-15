@@ -18,7 +18,7 @@ function Cart() {
       setLoading(true);
       setError(null);
       try {
-        const response = await axios.get(`http://localhost:5500/v1/cart/${isLogin}`);
+        const response = await axios.get(`https://rgja.onrender.com/v1/cart/${isLogin}`);
         if (response.data.success) {
           setCart(response.data.cart);
         } else {

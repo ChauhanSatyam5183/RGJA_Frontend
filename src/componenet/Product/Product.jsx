@@ -19,7 +19,7 @@ const Product = () => {
    console.log(isLogin,"Product added begin");
 
     try {
-      const response = await axios.post("http://localhost:5500/v1/cart/add", {
+      const response = await axios.post("https://rgja.onrender.com/v1/cart/add", {
         userId: isLogin, // Use actual user ID
         productId: product._id,
         quantity: 1, // Default to 1 for now
