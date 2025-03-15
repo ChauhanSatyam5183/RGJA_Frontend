@@ -66,10 +66,14 @@ function Navbar1() {
             </button>
             
             {isLoginOpen && (
-              <div className="absolute right-0 mt-2 bg-blue-100 shadow-lg rounded-lg w-32 p-2 border z-10 cursor-pointer">
-                <a  className="block px-3 py-2 hover:bg-blue-300 ">
+              <div className="absolute right-0 mt-2 bg-blue-100 shadow-lg rounded-lg w-32 p-2 border z-10 hover:cursor-pointer">
+              <div className="flex justify-between">
+              <a  className="block px-3 py-2 hover:bg-blue-300 ">
                   Login
                 </a>
+                <a className="mr-2 text-red-500 text-xl" onClick={()=>{setIsLoginOpen(false)}}>X</a>
+              </div>
+                
                 <a className="block px-3 py-2 hover:bg-blue-300">
                   Signup
                 </a>

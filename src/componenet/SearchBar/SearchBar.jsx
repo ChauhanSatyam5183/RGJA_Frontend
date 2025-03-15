@@ -77,7 +77,7 @@ function SearchBar({ name }) {
 
             {/* Loader when fetching more products */}
             {loading && products.length > 0 && (
-                <div className="flex justify-center mt-4">
+                <div className="flex justify-center my-4">
                     <span className="loading loading-bars loading-md text-blue-500"></span>
                 </div>
             )}
