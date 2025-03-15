@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaSearch, FaShoppingCart, FaUser } from "react-icons/fa";
 import UseDebounce from "../Debounce/Debouncing";
 import Banner1 from "../Banner/Banner1";
@@ -9,6 +9,7 @@ import SearchBar from "../SearchBar/SearchBar";
 
 import { useNavigate } from "react-router-dom";
 import Login from "../AuthComponent/Login";
+import LoginContext from "../Context/LoginContext";
 
 
 
@@ -16,6 +17,8 @@ import Login from "../AuthComponent/Login";
 function Navbar1() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const[search,setSearch]=useState(); 
+  
+   const { isLogin } = useContext(LoginContext);
 
   const [isOpen, setIsOpen] = useState(false);
   const debounce=UseDebounce((e)=>{
@@ -28,7 +31,9 @@ function Navbar1() {
   //naviget to another page 
   navigate(`/category?Name=${name}`);
  }
-
+ function navigation(){
+  navigate(`/cart`);
+ }
   return ( 
 
   <>
@@ -86,10 +91,16 @@ function Navbar1() {
           </div>
 
           {/* Cart */}
-          <div className="flex items-center gap-1 cursor-pointer hover:text-black">
-            <FaShoppingCart className="text-lg" />
-            <span>Cart</span>
-          </div>
+          
+          <div className="flex items-center gap-1 cursor-pointer hover:text-black" onClick={() => (isLogin ? navigation() : alert("Please login first!"))}>
+          
+           <FaShoppingCart className="text-lg" />
+                <span >
+                    Cart
+                </span>
+                 </div>
+
+          
         </div> {/* ✅ Properly closed this div */}
 
       </div>
