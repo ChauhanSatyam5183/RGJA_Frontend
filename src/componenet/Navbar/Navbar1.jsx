@@ -8,6 +8,7 @@ import Footer from "../Footer/Footer";
 import SearchBar from "../SearchBar/SearchBar";
 
 import { useNavigate } from "react-router-dom";
+import Login from "../AuthComponent/Login";
 
 
 
@@ -15,6 +16,8 @@ import { useNavigate } from "react-router-dom";
 function Navbar1() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const[search,setSearch]=useState(); 
+
+  const [isOpen, setIsOpen] = useState(false);
   const debounce=UseDebounce((e)=>{
     setSearch(e.target.value);
    }); 
@@ -68,9 +71,10 @@ function Navbar1() {
             {isLoginOpen && (
               <div className="absolute right-0 mt-2 bg-blue-100 shadow-lg rounded-lg w-32 p-2 border z-10 hover:cursor-pointer">
               <div className="flex justify-between">
-              <a  className="block px-3 py-2 hover:bg-blue-300 ">
+              <a  className="block px-3 py-2 hover:bg-blue-300 "  onClick={() => setIsOpen(true)}>
                   Login
                 </a>
+                {isOpen && <Login isOpen={isOpen} onClose={() => setIsOpen(false)} />}
                 <a className="mr-2 text-red-500 text-xl" onClick={()=>{setIsLoginOpen(false)}}>X</a>
               </div>
                 
