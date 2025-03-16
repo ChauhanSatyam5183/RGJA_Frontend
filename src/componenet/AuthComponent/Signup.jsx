@@ -37,99 +37,99 @@ function Signup() {
 
   return (
     <>
-    {/* Logo */}
-    <div className="md:text-2xl h-[30px] text-center font-bold text-blue-600">
-          RGJA<span className="text-yellow-500">SHOP</span> <span className="text-blue-500 ">s✨</span>
-        </div>
-    <div className="flex h-screen items-center justify-center bg-blue-100 ">
-      
-
-      {/* Right Section */}
-      <div className="bg-white w-full md:w-1/3 p-8 rounded-lg shadow-md ">
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <h2 className="text-xl font-semibold text-gray-700">Create an Account</h2>
-          {message && <p className="text-green-600">{message}</p>}
-          {error && <p className="text-red-600">{error}</p>}
-
-          {/* Name */}
-          <input
-            type="text"
-            name="name"
-            placeholder="Full Name"
-            value={formData.name}
-            onChange={handleChange}
-            className="w-full p-2 border-b-2 border-gray-300 focus:outline-none focus:border-blue-500"
-            required
-          />
-
-          {/* Email */}
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={formData.email}
-            onChange={handleChange}
-            className="w-full p-2 border-b-2 border-gray-300 focus:outline-none focus:border-blue-500"
-            required
-          />
-
-          {/* Phone */}
-          <input
-            type="text"
-            name="phone"
-            placeholder="Mobile Number"
-            value={formData.phone}
-            onChange={handleChange}
-            className="w-full p-2 border-b-2 border-gray-300 focus:outline-none focus:border-blue-500"
-            required
-          />
-
-          {/* Address */}
-          <input
-            type="text"
-            name="address"
-            placeholder="Address"
-            value={formData.address}
-            onChange={handleChange}
-            className="w-full p-2 border-b-2 border-gray-300 focus:outline-none focus:border-blue-500"
-            required
-          />
-
-          {/* Password */}
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={formData.password}
-            onChange={handleChange}
-            className="w-full p-2 border-b-2 border-gray-300 focus:outline-none focus:border-blue-500"
-            required
-          />
-
-          <p className="text-xs text-gray-500">
-            By continuing, you agree to our{" "}
-            <span className="text-blue-500 cursor-pointer">Terms of Use</span> and{" "}
-            <span className="text-blue-500 cursor-pointer">Privacy Policy</span>.
-          </p>
-
-          <button
-            type="submit"
-            className="w-full bg-orange-500 text-white p-3 rounded-lg hover:bg-orange-600 transition-all"
-          >
-            SIGN UP
-          </button>
-      
-      <Link to="/">
-          <div className="text-center">
-            <button className="w-full border p-3 rounded-lg mt-4 text-blue-500 hover:bg-gray-100">
-              Existing User? Log in
-            </button>
-          </div>
-          </Link>
-        </form>
+      {/* Logo */}
+      <div className="text-lg sm:text-xl  text-center font-bold text-blue-600 mt-4">
+        RGJA<span className="text-yellow-500">SHOP</span> <span className="text-blue-500">s✨</span>
       </div>
-    </div>
-    
+
+      <div className="flex flex-col items-center justify-center min-h-screen px-4 bg-blue-100">
+        {/* Form Container */}
+        <div className="bg-white w-full sm:w-[90%] md:w-1/2 lg:w-1/3 p-6 sm:p-8 rounded-lg shadow-md">
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <h2 className="text-lg sm:text-xl font-semibold text-gray-700 text-center">Create an Account</h2>
+            {message && <p className="text-green-600 text-center">{message}</p>}
+            {error && <p className="text-red-600 text-center">{error}</p>}
+
+            <div className="space-y-3">
+              {/* Name */}
+              <input
+                type="text"
+                name="name"
+                placeholder="Full Name"
+                value={formData.name}
+                onChange={handleChange}
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
+              />
+
+              {/* Email */}
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                value={formData.email}
+                onChange={handleChange}
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
+              />
+
+              {/* Phone */}
+              <input
+                type="text"
+                name="phone"
+                placeholder="Mobile Number"
+                value={formData.phone}
+                onChange={handleChange}
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
+              />
+
+              {/* Address */}
+              <input
+                type="text"
+                name="address"
+                placeholder="Address"
+                value={formData.address}
+                onChange={handleChange}
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
+              />
+
+              {/* Password */}
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                value={formData.password}
+                onChange={handleChange}
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
+              />
+            </div>
+
+            <p className="text-xs text-gray-500 text-center">
+              By continuing, you agree to our{" "}
+              <span className="text-blue-500 cursor-pointer">Terms of Use</span> and{" "}
+              <span className="text-blue-500 cursor-pointer">Privacy Policy</span>.
+            </p>
+
+            <button
+              type="submit"
+              className="w-full bg-orange-500 text-white p-3 rounded-lg hover:bg-orange-600 transition-all"
+            >
+              SIGN UP
+            </button>
+
+            <Link to="/">
+              <div className="text-center">
+                <button className="w-full border p-3 rounded-lg mt-4 text-blue-500 hover:bg-gray-100">
+                  Existing User? Log in
+                </button>
+              </div>
+            </Link>
+          </form>
+        </div>
+      </div>
     </>
   );
 }
